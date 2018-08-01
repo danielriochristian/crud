@@ -13,7 +13,11 @@ class Admin extends CI_Controller {
 
  	function index(){
  		$data['tb_mahasiswa'] = $this->modelcrud->tampil_data()->result();
+
+    $this->load->view('header');
     $this->load->view('template',$data);
+
+    $this->load->view('menu');$this->load->view('footer');
  	}
 
  	function tambah(){
