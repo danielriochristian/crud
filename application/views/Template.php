@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CRUD CodeIgniter</title>
+  <title>AdminLTE 2 | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -79,11 +79,23 @@
         <li class="header">MAIN NAVIGATION</li>
 
         <li class="treeview">
-          <a href="<?php echo base_url(); ?>Admin/tambah">
+          <a href="#">
             <i class="fa fa-files-o"></i>
-              <span>Tambah data</span>
-          </a> </li>
-
+            <span>Dashboard</span>
+            </span>
+          </a>
+          <li>
+            <?php echo anchor('Admin/tambah','Tambah Data'); ?>
+          </li>
+          <li>
+            <?php echo anchor('Admin/tambah','Tambah Data'); ?>
+          </li>
+          <li class="treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i>
+              <span>Delete</span>
+              </span>
+            </a>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -94,7 +106,7 @@
     <section class="content-header">
       <h1>
         Dashboard
-        <!-- <small>Control panel</small> -->
+        <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -110,33 +122,39 @@
           <div class="box box-success">
             <div class="box-header">
               <i class="fa fa-comments-o"></i>
+
               <h3 class="box-title">Daftar Mahasiswa</h3>
-		    <table class="table table-bordered" id="table-data">
-		      <thead>
-			      <tr>
-			        <th>No</th>
-			        <th>NPM</th>
-			        <th>NAMA</th>
-              <th>JURUSAN</th>
-			        <th>KELAS</th>
-			      </tr>
-            <?php
-          		$no = 1;
-          		foreach($tb_mahasiswa as $mhs){
-          		?>
-          		<tr>
-          			<td><?php echo $no++ ?></td>
-          			<td><?php echo $mhs->NPM ?></td>
-          			<td><?php echo $mhs->Nama ?></td>
-          			<td><?php echo $mhs->Jurusan ?></td>
-                <td><?php echo $mhs->Kelas ?></td>
-          		</tr>
-          		<?php } ?>
-		      </thead>
+              <center><?php echo anchor('Admin/tambah','Tambah Data'); /* anchor = hyperlink CI */ ?></center>
+              <table style="margin:20px auto;" border="1">
+                <tr>
+                  <th>No</th>
+                  <th>NPM</th>
+                  <th>Nama</th>
+                  <th>Jurusan</th>
+                  <th>Kelas</th>
+                  <th>Action</th>
+                </tr>
+                <?php
+                $no = 1;
+                foreach($tb_mahasiswa as $u){
+                ?>
+                <tr>
+                  <td><?php echo $no++ ?></td>
+                  <td><?php echo $u->NPM ?></td>
+                  <td><?php echo $u->Nama ?></td>
+                  <td><?php echo $u->Jurusan ?></td>
+                  <td><?php echo $u->Kelas ?></td>
+                  <td>
+                          <?php echo anchor('Admin/edit/'.$u->NPM,'edit'); ?>
+                              <?php echo anchor('Admin/hapus/'.$u->NPM,'hapus'); ?>
+                              </td>
+                </tr>
+                <?php } ?>
               </table>
             </div>
-          </div>
 
+
+          </div>
         </div>
 
         </section>
