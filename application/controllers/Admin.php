@@ -15,4 +15,7 @@ class Admin extends CI_Controller {
 		$this->load->view('Template',$data);
 	}
 
+  // function tambah(){
+	// 	$this->load->view('create');
+	// }
 }

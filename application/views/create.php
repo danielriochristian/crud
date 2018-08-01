@@ -79,10 +79,11 @@
         <li class="header">MAIN NAVIGATION</li>
 
         <li class="treeview">
-          <a href="<?php echo base_url(); ?>Admin/tambah">
+          <a href="#">
             <i class="fa fa-files-o"></i>
-              <span>Tambah data</span>
-          </a> </li>
+            <span>Layout Options</span>
+            </span>
+          </a>
 
     </section>
     <!-- /.sidebar -->
@@ -110,30 +111,11 @@
           <div class="box box-success">
             <div class="box-header">
               <i class="fa fa-comments-o"></i>
-              <h3 class="box-title">Daftar Mahasiswa</h3>
-		    <table class="table table-bordered" id="table-data">
-		      <thead>
-			      <tr>
-			        <th>No</th>
-			        <th>NPM</th>
-			        <th>NAMA</th>
-              <th>JURUSAN</th>
-			        <th>KELAS</th>
-			      </tr>
-            <?php
-          		$no = 1;
-          		foreach($tb_mahasiswa as $mhs){
-          		?>
-          		<tr>
-          			<td><?php echo $no++ ?></td>
-          			<td><?php echo $mhs->NPM ?></td>
-          			<td><?php echo $mhs->Nama ?></td>
-          			<td><?php echo $mhs->Jurusan ?></td>
-                <td><?php echo $mhs->Kelas ?></td>
-          		</tr>
-          		<?php } ?>
-		      </thead>
-              </table>
+              <h3 class="box-title">Tambah Data</h3>
+              <div class="form-group">
+          		<label> Title Slider </label>
+          		<input type="text" id="title" name="title" class="form-control" placeholder="Slider Title">
+
             </div>
           </div>
 
